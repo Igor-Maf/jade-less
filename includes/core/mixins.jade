@@ -1,0 +1,15 @@
+mixin menuList( items )
+	ul.menu__list
+		each item in items.length ? items : ['There are no values']
+			li.menu__item: a(href="#")= item
+
+
+mixin menu( items, state )
+	if state == true
+		nav.menu.menu--top
+			+menuList( items )
+	else
+		nav.col-2.menu.menu--footer
+			+menuList( items )
+
+			

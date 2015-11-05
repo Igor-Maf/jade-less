@@ -1,0 +1,28 @@
+include includes/core/variables
+include includes/core/mixins
+
+doctype html
+html(lang="en")
+	head
+		block title
+			title Parent layout
+
+		meta(charset="utf-8")
+		include includes/styles
+
+	body
+		section.container
+			header
+				+menu( mainMenuItems, true )
+
+			section
+				include includes/modules/sidebar
+				
+				block home
+
+			footer
+				+menu( footerMenuItems, false )
+				p.col-2.copyright 
+					&copy; 2015 - All rights reserved.
+
+		include includes/scripts

@@ -1,0 +1,70 @@
+// variables
+@path-core: 'core';
+@path-modules: 'modules';
+@path-img: 'img';
+
+// core
+@import "@{path-core}/palette";
+@import "@{path-core}/extends";
+@import "@{path-core}/grid";
+
+html * {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font: 15px / 1.5 sans-serif;
+	color: @black;
+	min-width: 992px;
+}
+
+a {
+	color: @blue;
+	text-decoration: none;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+
+	&:hover,
+	&:focus {
+		color: lighten(@blue, 30%);
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+  	font-family: Arial;
+}
+
+@iterations: 1;
+
+.h(@index) when (@index < 7) {
+	h@{index} {
+        font-size: 48px - @index * 6;
+	}
+
+	.h(@index + 1);
+}
+
+.h(@iterations);
+
+.container {
+	width: 980px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.copyright {
+	margin-top: 1em;
+	font-size: .9em;
+	color: lighten(@black, 20%);
+	text-align: right;
+}
+
+// modules
+@import "@{path-modules}/menu";
+@import "@{path-modules}/widget";
+@import "@{path-modules}/page";

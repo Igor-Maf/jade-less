@@ -1,0 +1,13 @@
+[class^="col-"] {
+	&:extend(.inline-block);
+}
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+	.col-@{i} {
+		width: (@i * 100% / @n);
+	}
+
+	.generate-columns(@n, (@i + 1));
+}
+
+.generate-columns(4);

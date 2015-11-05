@@ -1,0 +1,24 @@
+.menu {
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	&--top {
+		text-align: right;
+	}
+
+	&--footer {
+		font-size: .9em;
+	}
+
+	&__list {
+		list-style-type: none;
+	}
+
+	&__item {
+		&:extend(.inline-block);
+
+		&:not(:first-child) {
+			margin-left: 20px;
+		}
+	}
+}
